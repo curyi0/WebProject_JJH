@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <!--taglib prefix="c" uri="jakarta.tags.core" -->
 <!DOCTYPE html>
 <html>
    <head>
@@ -55,14 +56,14 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand"href="index.html"><img src="images/logo.png"></a>
+               <a class="navbar-brand"href="index.jsp"><img src="images/pixlogo.png"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.html">Home</a>
+                        <a class="nav-link" href="index.jsp">Home</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
@@ -71,10 +72,10 @@
                         <a class="nav-link" href="treatment.html">Treatment</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="doctors.html">Doctors</a>
+                        <a class="nav-link" href="doctors.html">자유게시판</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
+                        <a class="nav-link" href="blog.html">Q&A</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact Us</a>
@@ -87,7 +88,7 @@
             <div class="custom_bg">
                <div class="custom_menu">
                   <ul>
-                     <li class="active"><a href="index.html">Home</a></li>
+                     <li class="active"><a href="index.jsp">Home</a></li>
                      <li><a href="about.html">About</a></li>
                      <li><a href="treatment.html">Treatment</a></li>
                      <li><a href="doctors.html">Doctors</a></li>
@@ -97,7 +98,7 @@
                </div>
                <form class="form-inline my-2 my-lg-0">
                   <div class="search_btn">
-                     <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="signup_text">Login</span></a></li>
+                     <li><a href="로그인화면.html"><i class="fa fa-user" aria-hidden="true"></i><span class="signup_text">Login</span></a></li>
                      <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="signup_text">Sign Up</span></a></li>
                      <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
                   </div>
@@ -275,126 +276,27 @@
                                  </div>
                               </div>
                            </div>
-                           <div class="col-md-4">
-                              <div class="doctores_box">
-                                 <div class="image_1"><img src="images/img-2.png"></div>
-                                 <h4 class="humour_text">Jenni <br><span class="mbbs_text">MBBS</span></h4>
-                                 <div class="social_icon">
-                                    <ul>
-                                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-4">
-                              <div class="doctores_box">
-                                 <div class="image_1"><img src="images/img-3.png"></div>
-                                 <h4 class="humour_text">Morco <br><span class="mbbs_text">MBBS</span></h4>
-                                 <div class="social_icon">
-                                    <ul>
-                                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                 </div>
-                              </div>
+                           <div class="col-md-4"> </div>
+                           <div class="col-md-4">    </div>
                            </div>
                         </div>
                      </div>
                      <div class="carousel-item">
                         <div class="row">
-                           <div class="col-md-4">
-                              <div class="doctores_box">
-                                 <div class="image_1"><img src="images/img-1.png"></div>
-                                 <h4 class="humour_text">Humour <br><span class="mbbs_text">MBBS</span></h4>
-                                 <div class="social_icon">
-                                    <ul>
-                                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-4">
-                              <div class="doctores_box">
-                                 <div class="image_1"><img src="images/img-2.png"></div>
-                                 <h4 class="humour_text">Jenni <br><span class="mbbs_text">MBBS</span></h4>
-                                 <div class="social_icon">
-                                    <ul>
-                                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-4">
-                              <div class="doctores_box">
-                                 <div class="image_1"><img src="images/img-3.png"></div>
-                                 <h4 class="humour_text">Morco <br><span class="mbbs_text">MBBS</span></h4>
-                                 <div class="social_icon">
-                                    <ul>
-                                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                 </div>
-                              </div>
+                           <div class="col-md-4">  </div>
+                           <div class="col-md-4">       </div>
+                           
+                           <div class="col-md-4"><!--sns 아이콘-->                   
                            </div>
                         </div>
                      </div>
                      <div class="carousel-item">
                         <div class="row">
-                           <div class="col-md-4">
-                              <div class="doctores_box">
-                                 <div class="image_1"><img src="images/img-1.png"></div>
-                                 <h4 class="humour_text">Humour <br><span class="mbbs_text">MBBS</span></h4>
-                                 <div class="social_icon">
-                                    <ul>
-                                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                 </div>
-                              </div>
+                           <div class="col-md-4">     </div>
                            </div>
+                           <div class="col-md-4">   </div>
                            <div class="col-md-4">
-                              <div class="doctores_box">
-                                 <div class="image_1"><img src="images/img-2.png"></div>
-                                 <h4 class="humour_text">Jenni <br><span class="mbbs_text">MBBS</span></h4>
-                                 <div class="social_icon">
-                                    <ul>
-                                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="col-md-4">
-                              <div class="doctores_box">
-                                 <div class="image_1"><img src="images/img-3.png"></div>
-                                 <h4 class="humour_text">Morco <br><span class="mbbs_text">MBBS</span></h4>
-                                 <div class="social_icon">
-                                    <ul>
-                                       <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                                       <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                 </div>
-                              </div>
-                           </div>
+                            </div>
                         </div>
                      </div>
                   </div>
@@ -408,7 +310,8 @@
             </div>
          </div>
       </div>
-      <!-- doctores section end -->
+      <!-- doctores 페이지 end -->
+      
       <!-- testimonial section start -->
       <div class="testimonial_section layout_padding">
          <div class="container">
@@ -465,27 +368,31 @@
          </div>
       </div>
       <!-- testimonial section end -->
-      <!-- contact section start -->
+      
+      <!-- contact 페이지 start --><!--링크없애고 회원가입 페이지 링크로 쓸 예정-->
       <div class="contact_section layout_padding">
          <div class="container-fluid">
             <div class="contact_section_2">
                <div class="row">
-                  <div class="col-md-6">
-                     <h1 class="contact_taital">Get In Touch</h1>
+                  <div class="col-md-6">        
+                     <h1 class="contact_taital"></h1>
                      <form action="">
-                        <div class="mail_section_1">
+                        <div 5"class="mail_section_1">
                            <input type="text" class="mail_text" placeholder="Name" name="Name">
                            <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number"> 
                            <input type="text" class="mail_text" placeholder="Email" name="Email">
                            <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                           <div class="send_bt"><a href="#">SEND</a></div>
-                        </div>
+                    <!--회원가입후 전송--><div class="send_bt"><a href="index.jsp">전송</a></div>
+                    <script type="text" ></script>
+                     </div>
                      </form>
                   </div>
-                  <div class="col-md-6 padding_left_15">
-                     <div class="map_main">
+                  
+                  <div class="col-md-6 padding_left_1">
+                     <div class="map_main"><!--구글 지도 왜있는진 모름 지네 위치 표시 -->
                         <div class="map-responsive">
-                           <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="600" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
+                           <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" 
+                           width="600" height="600" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>
                         </div>
                      </div>
                   </div>
@@ -494,7 +401,8 @@
          </div>
       </div>
       <!-- contact section end -->
-      <!-- footer section start -->
+      
+      <!-- footer(하단  꾸미기 영역)section start -->
       <div class="footer_section">
          <div class="container">
             <div class="input_bt">
@@ -509,11 +417,11 @@
                         <ul>
                            <li>
                               <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i>
-                              <span class="padding_15">Making this the first true</span></a>
+                              <span class="padding_15">서울시 구구 감동</span></a>
                            </li>
                            <li>
                               <a href="#"><i class="fa fa-phone" aria-hidden="true"></i>
-                              <span class="padding_15">Call : +01 1234567890</span></a>
+                              <span class="padding_15">문의번호: +01 1234567890</span></a>
                            </li>
                            <li>
                               <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i>
@@ -521,8 +429,9 @@
                            </li>
                         </ul>
                      </div>
+                     
                      <div class="footer_social_icon">
-                        <ul>
+                        <ul><!-- sns 연동 필요 없을 듯 간지용-->
                            <li>
                               <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                            </li>
@@ -536,14 +445,15 @@
                               <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                            </li>
                         </ul>
-                     </div>
+                     </div>      
                   </div>
+                  
                   <div class="col-lg-3 col-sm-6">
                      <h3 class="footer_taital">Useful Link</h3>
                      <div class="footer_menu">
                         <ul>
                            <li class="active">
-                              <a href="index.html">Home</a>
+                              <a href="index.jsp">Home</a>
                            </li>
                            <li>
                               <a href="about.html">About</a>
@@ -563,6 +473,7 @@
                         </ul>
                      </div>
                   </div>
+                  
                   <div class="col-lg-3 col-sm-6">
                      <h3 class="footer_taital">Help & Support</h3>
                      <p class="ipsum_text">Opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page</p>
