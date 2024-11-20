@@ -143,10 +143,10 @@
                            <p><input type="text" class="text" placeholder="주소" name="Address"> </p>
                            &nbsp;
                         
-                           <input type="button"  value="가입하기" class="send_bt"><a href="index.do"></a>
-                           <!-- onclick="window.location.href=''../index.do'"-->           
+                           <input type="button"  value="가입하기" class="send_bt"><a href="signup.do"></a>
+                           <!-- onclick="location.href='/index.do';"-->           
                            </div><!-- 조건문추가-->
-                       
+                       	
                         </div>
                      </form>
                   </div>
@@ -164,9 +164,9 @@
 					var jumin2check= document.getElementById("jumin2");
 					var jumins3 = jumins1.value + jumins2.value;//1과 2를 합친곳
 				}
-                  
+                  	alert("")
                   </script>
-                  
+                  <
                    <!-- 구글맵?-->
                   <div class="col-md-6 padding_left_15">
                      <div class="map_main">
