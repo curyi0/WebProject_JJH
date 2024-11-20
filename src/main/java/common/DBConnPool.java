@@ -9,7 +9,7 @@ import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.sql.DataSource;
 
-/*  JN
+/*  
  * */
 public class DBConnPool {
 	public Connection con;
@@ -28,13 +28,14 @@ public class DBConnPool {
 	//디렉토리 이름은 저장되어 있는 이름 그대로 사용 했다.
 			Context ctx= (Context)initCtx.lookup("java:comp/env");
 	  //server.xml 에 등록한 네이밍을 lookup하여 Datasource를 얻어온다. 즉,DB연결을 위한 정보를 가지고 있다.
-			DataSource source= (DataSource)ctx.lookup("dbcp_myoracle");
+			DataSource source= (DataSource)ctx.lookup("dbcp_webproject");
 			//커넥션풀에 생성해 둔 객체를 가져다가 사용, 실제 db연결 처리
 			con= source.getConnection();
-			System.out.println("DB 커넥션 풀연결 성공!");
-		} catch (Exception e) {
+			System.out.println("dbcp_webproject 커넥션 풀연결 성공!");
+		} 
+		catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("DB 커넥션 풀 연결 실패..");
+			System.out.println("dbcp_webproject 커넥션 풀 연결 실패..");
 			e.printStackTrace()	;
 		}
 	}

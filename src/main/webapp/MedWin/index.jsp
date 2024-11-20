@@ -12,7 +12,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>Pixel G</title>
+      <title>홈페이지 화면</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -36,6 +36,7 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
       <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
    </head>
+   
    <body>
       <!-- header top section start -->
       <div class="header_top_section">
@@ -56,30 +57,28 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand"href="index.jsp"><img src="images/pixlogo.png"></a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <a class="navbar-brand"href="index.do"><img src="images/pixlogo.png"></a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
+               aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav ml-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.jsp">Home</a>
+                        <a class="nav-link" href="index.do">Home</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="#">About</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="treatment.html">Treatment</a>
+                        <a class="nav-link" href="FreeBoard.do">자유게시판</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="doctors.html">자유게시판</a>
+                        <a class="nav-link" href="QABoard.do">Q&A</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Q&A</a>
-                     </li>
-                     <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact Us</a>
-                     </li>
+                        <a class="nav-link" href="History.do">자료실</a>
+                     </li>                 
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
                   </form>
@@ -88,21 +87,29 @@
             <div class="custom_bg">
                <div class="custom_menu">
                   <ul>
-                     <li class="active"><a href="index.jsp">Home</a></li>
-                     <li><a href="about.html">About</a></li>
-                     <li><a href="treatment.html">Treatment</a></li>
-                     <li><a href="doctors.html">Doctors</a></li>
-                     <li><a href="blog.html">Blog</a></li>
-                     <li><a href="contact.html">Contact Us</a></li>
+                     <li class="active"><a href="index.do">Home</a></li>
+                     <li><a href="about.do">About</a></li>
+                     <li><a href="FreeBoard.do">자유게시판</a></li>
+                     <li><a href="QABoard.do">Q&A</a></li>
+                     <li><a href="History.do">자료실</a></li>
                   </ul>
                </div>
+               <!--  로그인, 회원가입 홈페이지 내 버튼 , 로그인시엔 로그아웃버튼으로 변경-->
                <form class="form-inline my-2 my-lg-0">
                   <div class="search_btn">
-                     <li><a href="로그인화면.html"><i class="fa fa-user" aria-hidden="true"></i><span class="signup_text">Login</span></a></li>
-                     <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i><span class="signup_text">Sign Up</span></a></li>
-                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                  </div>
-               </form>
+                     <li><a onclick="window.location.href='Login.do';"><i class="fa fa-user" aria-hidden="true"></i>
+                     <span class="signup_text">Login</span></a></li>
+                     <li><a onclick="window.location.href='signup.do';"><i class="fa fa-user" aria-hidden="true"></i>
+                     <span class="signup_text">Sign Up</span></a></li>   
+                     <c:if ></c:if> 
+                     <li><a href="Logout.jsp"></a></li>
+                     <span class="signup_text">Logout</span></a></li>
+                     
+                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                     <button class="btn btn-sm btn-outline-secondary" type="submit">Search</button>
+                      </div>   
+                       </form>
+                       
             </div>
          </div>
          <!-- header section end -->
@@ -111,16 +118,17 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-12">
-                     <h1 class="banner_taital">We care Of You</h1>
-                     <p class="banner_text">When looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to </p>
-                     <div class="read_bt"><a href="#">Read More</a></div>
+                   <!-- 홈페이지입장문구-->  <h1 class="banner_taital">xx 게임사입니다.</h1>
+                     <p class="banner_text"> The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
+                     <div class="read_bt" onclick= ><a href="#">Read More</a></div>
                   </div>
                </div>
             </div>
          </div>
          <!-- banner section end -->
       </div>
-      <!-- header section end -->
+      
+      
       <!-- appointment section start -->
       <div class="appointment_section">
          <div class="container">
@@ -210,45 +218,7 @@
          </div>
       </div>
       <!-- about section end -->
-      <!-- treatment section start -->
-      <div class="treatment_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-12">
-                  <h1 class="treatment_taital">Hospital Treatment</h1>
-               </div>
-            </div>
-            <div class="treatment_section_2">
-            <div class="row">
-               <div class="col-lg-3 col-sm-6">
-                  <h1 class="number_text">01</h1>
-                  <h2 class="care_text">Nephrologist Care</h2>
-                  <p class="treatment_text">alteration in some form, by injected humour, or randomised words which don't look even slightly e sure there isn't anything</p>
-                  <div class="readmore_bt active"><a href="#">Read More</a></div>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <h1 class="number_text">02</h1>
-                  <h2 class="care_text">Eye Care</h2>
-                  <p class="treatment_text_1">alteration in some form, by injected humour, or randomised words which don't look even </p>
-                  <div class="readmore_bt"><a href="#">Read More</a></div>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <h1 class="number_text">03</h1>
-                  <h2 class="care_text">Pediatrician Clinic</h2>
-                  <p class="treatment_text_1">alteration in some form, by injected humour, or randomised words which don't look even</p>
-                  <div class="readmore_bt"><a href="#">Read More</a></div>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <h1 class="number_text">04</h1>
-                  <h2 class="care_text">Prenatal Care</h2>
-                  <p class="treatment_text_1">alteration in some form, by injected humour, or randomised words which don't look even</p>
-                  <div class="readmore_bt"><a href="#">Read More</a></div>
-               </div>
-            </div>
-         </div>
-         </div>
-      </div>
-      <!-- treatment section end -->
+
       <!-- doctores section start -->
       <div class="doctores_section">
          <div class="container">
@@ -368,26 +338,7 @@
          </div>
       </div>
       <!-- testimonial section end -->
-      
-      <!-- contact 페이지 start --><!--링크없애고 회원가입 페이지 링크로 쓸 예정-->
-      <div class="contact_section layout_padding">
-         <div class="container-fluid">
-            <div class="contact_section_2">
-               <div class="row">
-                  <div class="col-md-6">        
-                     <h1 class="contact_taital"></h1>
-                     <form action="">
-                        <div 5"class="mail_section_1">
-                           <input type="text" class="mail_text" placeholder="Name" name="Name">
-                           <input type="text" class="mail_text" placeholder="Phone Number" name="Phone Number"> 
-                           <input type="text" class="mail_text" placeholder="Email" name="Email">
-                           <textarea class="massage-bt" placeholder="Massage" rows="5" id="comment" name="Massage"></textarea>
-                    <!--회원가입후 전송--><div class="send_bt"><a href="index.jsp">전송</a></div>
-                    <script type="text" ></script>
-                     </div>
-                     </form>
-                  </div>
-                  
+                      
                   <div class="col-md-6 padding_left_1">
                      <div class="map_main"><!--구글 지도 왜있는진 모름 지네 위치 표시 -->
                         <div class="map-responsive">
@@ -396,12 +347,7 @@
                         </div>
                      </div>
                   </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- contact section end -->
-      
+                  
       <!-- footer(하단  꾸미기 영역)section start -->
       <div class="footer_section">
          <div class="container">
@@ -453,22 +399,22 @@
                      <div class="footer_menu">
                         <ul>
                            <li class="active">
-                              <a href="index.jsp">Home</a>
+                              <a href="index.do">Home</a>
                            </li>
                            <li>
-                              <a href="about.html">About</a>
+                              <a href="#">About</a>
                            </li>
                            <li>
-                              <a href="doctors.html">Doctors</a>
+                              <a href="QABoard.do">Q&A</a>
                            </li>
                            <li>
-                              <a href="news.html">News</a>
+                              <a href="news.do">News</a>
                            </li>
                            <li>
-                              <a href="treatment.html">Treatment</a>
+                              <a href="FreeBoard.do">FreeBoard</a>
                            </li>
                            <li>
-                              <a href="contact.html">Contact Us</a>
+                              <a href="contact.do">Contact Us</a>
                            </li>
                         </ul>
                      </div>

@@ -7,8 +7,9 @@ public class PlayerDTO {
 	private String Address;
 	private String Email;
 	private String AKA;
-	private String Game;
-	private String Age;
+	private String Status;
+	private String jumin;
+	private String Phonenumber;
 	
 	public String getId() {
 		return Id;
@@ -46,17 +47,24 @@ public class PlayerDTO {
 	public void setAKA(String aKA) {
 		AKA = aKA;
 	}
-	public String getGame() {
-		return Game;
+	public String getStatus() {
+		return Status;
 	}
-	public void setGame(String game) {
-		Game = game;
+	public void setStatus(String status) {
+		Status = status;
 	}
-	public String getAge() {
-		return Age;
+	public String getJumin() {
+		return jumin;
 	}
-	public void setAge(String age) {
-		Age = age;
+	public void setJumin(String jumin) {
+		this.jumin = jumin;
 	}
+	public String getPhonenumber() {
+		return Phonenumber;
+	}
+	public void setPhonenumber(String phonenumber) {
+		Phonenumber = phonenumber;
+	}
+
 
 }
