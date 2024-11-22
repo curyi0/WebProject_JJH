@@ -179,11 +179,11 @@
 							<!-- div class="signup_context"-->
 							*이름 <br />
 							<p>
-								<input type="text" class="text" placeholder="이름" name="Name"><br />
+								<input type="text" class="text" placeholder="수정할이름" name="Name"><br />
 							</p>
 							*아이디<br />
 							<p>
-								<input type="text" class="text" placeholder="아이디" name="Id"><br />
+								<input type="text" class="text" placeholder="수정할아이디" name="Id"><br />
 							</p>
 							*비밀번호 <br />
 							<p>
@@ -197,7 +197,7 @@
 
 							닉네임 <br />
 							<p>
-								<input type="text" class="text" placeholder="NickName"
+								<input type="text" class="text" placeholder="수정할닉네임"
 									name="AKA"><br />
 							</p>
 							*주민번호<br /><p> <input type="text" class="text" placeholder="앞자리"
@@ -212,16 +212,16 @@
 							
 							*전화번호(-없이)
 							<p>
-								<input type="text" class="text" placeholder="전화번호"
+								<input type="text" class="text" placeholder="수정할전화번호"
 									name="Phone_Number" maxlength="11"><br />
 							</p>
 							이메일<br />
 							<p>
-								<input type="text" class="text" placeholder="이메일" name="Email"><br />
+								<input type="text" class="text" placeholder="수정할이메일" name="Email"><br />
 							</p>
 							*주소<br />
 							<p>
-								<input type="text" class="text" placeholder="주소" name="Address">
+								<input type="text" class="text" placeholder="수정할주소" name="Address">
 							</p><div>
 							&nbsp; <input type="button" value="수정완료" class="send_bt" />
 							&nbsp; <input type="button" value="초기화" class="reset" />

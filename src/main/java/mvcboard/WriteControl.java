@@ -9,12 +9,15 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import jakarta.servlet.http.HttpSession; 
 
 import utils.JSFunction;
 
 @WebServlet("/MedWin/write.do")
 public class WriteControl extends HttpServlet {
+	 
+	private static final long serialVersionUID = 1L;
+
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
@@ -24,7 +27,7 @@ public class WriteControl extends HttpServlet {
 		// session영역에 회원확인, 로그인 중이면 작성페이지로, 속성이 없다면 로그인 페이지로 이동한다.
 		if (session.getAttribute("Id") != null) {
 			req.getRequestDispatcher("write.jsp").forward(req, resp);
-		} else {
+		} else {			
 			JSFunction.alertLocation(resp, "로그인 후 사용해 주세요", "./Login.jsp");
 			return;// 더이상 코드가 실행하지 않도록 차단
 		}

@@ -42,7 +42,7 @@ public class SignupControl extends HttpServlet {
 			if (Values[i] == null || Values[i].isEmpty()) {
 				JSFunction.alertBack(resp, failMessages[i]);
 				allFilled = false;
-				break;
+				
 			}
 		}
 
