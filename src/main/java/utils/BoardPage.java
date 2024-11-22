@@ -11,7 +11,7 @@ public class BoardPage {
 	public static String pagingStr(int totalCount, int pageSize, int blockPage,
 			int pageNum, String reqUrl) {
 		String pagingStr="";
-		/* 전체 페잊수 계산 
+		/* 전체 페이지수 계산 
 		ceil(전체게시물 수/ 한페이지당 게시물 수) => 결과를 올림처리 
 		첫 줄 계산시 나눗셈이 정수결과로 나오기때문에 올림처리를 위해 double명시*/
 		int totalPages= (int)(Math.ceil((double) totalCount/pageSize));

@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="viewport" content="initial-scale=1, maximum-scale=1">
 <!-- site metas -->
-<title>Q&A</title>
+<title>홈페이지 화면</title>
 <meta name="keywords" content="">
 <meta name="description" content="">
 <meta name="author" content="">
@@ -110,8 +110,8 @@
 					<li><a href="./History.do">자료실</a></li>
 
 				</ul>
-			</div></div>
-
+			</div>
+			</div>
 			<form class="form-inline my-2 my-lg-0">
 				<%
 				// session영역에 저장된 속성이 없다면
@@ -120,7 +120,7 @@
 				%>
 				<!--  로그인상태면 -->
 				<%=session.getAttribute("AKA")%>
-				님 안녕하세요.&nbsp; <a href="./signEdit.do"> 내 정보 수정하기</a> <a
+				님 안녕하세요.&nbsp; <a href="./playerEdit.do"> 내 정보</a> <a
 					href="Logout.jsp"><i class="fa fa-user" aria-hidden="true"></i>
 					<span class="signup_text">Logout</span></a>
 				<%
@@ -141,34 +141,30 @@
 			</form>
 		</div>
 	</div>
-	<!-- header section end ------------------------------------------------------>
-	<h2>Q&A게시판</h2>
-	<table border="1" width="90%" autofocus="autofocus">
+	<!-- header section end -->
 
-		<tr>
-			<th width="10%">번호</th>
-			<th width="*">제목</th>
-			<th width="15%">작성자</th>
-			<th width="10%">조회수</th>
-			<th width="15%">작성일</th>
-			<th width="8%">첨부</th>
-		</tr>
-	
-		 
-			<tr>
-				<td colspan="6" align="center">등록된 게시물이 없습니다. 게시물을 작성해주세요. </td>
-			</tr>
-
-		</table>
-		
-		
-		<button class="btn btn-dark btn-midum" type="submit" align="right"
-		onclick="location.href='write.do'">작성하기</button>
-
-		<!-- 페이징 처리할 core
-		
-
--->
+	<h1>게시판 글 작성</h1>
+        <form action="write.do" method="post">
+            
+            <div class="form-group">
+                <label for="subject">제목</label>
+                <input type="text"  name="questTitle" placeholder="제목을 입력하세요" width="70%"required>
+            </div>
+            <div class="form-group">
+                <label for="writer">작성자</label>
+                <input type="text"  name="qid" placeholder="닉네임" required>
+            </div> <br/>
+            <div class="form-group">
+                <label for="content">내용</label> <br/>
+                <textarea  name="quest" rows="10" columns="20" maxlength="500" placeholder="내용을 입력하세요" required></textarea>
+            </div> 
+            <div class="form-actions">
+                <!-- button type="submit" class="btn-btn-sm" onclick>작성 완료</button-->
+                <a href="./QABoard.do">작성완료</a>
+                <button type="reset" class="btn-reset" >초기화</button>
+            </div>
+        
+        </form>
 
 
 
@@ -176,9 +172,7 @@
 
 
 
-
-
-	<div class="contact_section layout_padding">
+<div class="contact_section layout_padding">
 		<div class="container-fluid">
 			<div class="jfk-tooltip miniChapterSwitcherTooltip jfk-tooltip-hide"
 				role="tooltip" style="left: 25px; top: 113px;"></div>

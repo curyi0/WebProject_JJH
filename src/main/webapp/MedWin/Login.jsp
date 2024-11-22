@@ -150,6 +150,26 @@
       .links a:hover {
         text-decoration: underline;
       }
+   <!-- 비밀번호 보기 css -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+   <!-- 비밀번호 눈표시 -->
+   <style>
+       .input-group.password {
+           position: relative;
+       }
+    .input-group.password .eyes {
+           position: absolute;
+           top: 0;
+           bottom: 0;
+           right: 10px;
+           margin: auto;
+           height: 30px;
+           font-size: 22px;
+           cursor: pointer;
+           display: flex;
+           align-items: center;
+       }
     </style>
   </head>
   
@@ -159,7 +179,7 @@
   
     <div class="container">
       <h1>로그인</h1>
-      <form action="Login.do" method="post" >
+      <form action="./Login.do" method="post" >
         <div class="form-group">
           <label for="id">아이디</label>
           <input
@@ -168,15 +188,18 @@
             required
             placeholder="id를 입력하세요."/>
         </div>
-        <div class="form-group">
-          <label for="password">비밀번호</label>
+        <div class="form-group"><div class="input-group mb-4 password">
+        
+          <label for="password" >
+          비밀번호 
+          </label>
           <input
-            type="password"
+            type="password"  class="form-control login"
             name="pass"
             required
-            placeholder="비밀번호를 입력해주세요"
-          />
-        </div>
+            placeholder="비밀번호를 입력해주세요"/> <!-- div class="eyes"><i class="fa fa-eye fa-lg"></i></div-->
+        </div></div>
+        
         <div class="captcha-container">
           <label>보안 문자 입력</label>
           <canvas id="captcha-container" width="200" height="50"></canvas>
@@ -202,23 +225,23 @@
       <div class="links">
         <a href="#">아이디 찾기</a>
         <a href="#">비밀번호 찾기</a>
-        <a href="../signup.do" method="post">회원가입 </a>
-        
-      </div>
+        <a href="./signup.do" method="post">회원가입 </a></div>
     </div>
   
+  
+  
     <script>
-        let captchaText= '';
+         let captchaText= '';
 
         function generateCaptcha(){  //캡차 보안 문자 생성
             const canvas= document.getElementById('captcha-container');
             const ctx= canvas.getContext('2d');
             ctx.clearRect(0,0 ,canvas.width, canvas.height);
 
-             document.getElementById('captchaImage').textContent=captchaText;
+            /*  document.getElementById('captchaImage').textContent=captchaText;
              document.getElementById('captchaInput').value='';
-             document.getElementById('captchaError').style.display= 'none';
-            
+              document.getElementById('captchaError').style.display= 'none';
+            */
             ctx.fillStyle='#f0f0f0';
             for (let i=0; i<100; i++){
                 ctx.fillRect(
@@ -281,7 +304,7 @@
             }
         }
 
-    document.getElementById('로그인화면').addEventListener('submit', function(e){
+    document.getElementById('Login').addEventListener('submit', function(e){
         e.preventDefault();
 
         const email= document.getElementById('email').value;

@@ -4,6 +4,25 @@
 <!DOCTYPE html>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <html>
+<style>
+.input-group.password {
+           position: relative;
+       }
+    .input-group.password .eyes {
+           position: absolute;
+           top: 0;
+           bottom: 0;
+           right: 10px;
+           margin: auto;
+           height: 30px;
+           font-size: 22px;
+           cursor: pointer;
+           display: flex;
+           align-items: center;
+       }
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+
+</style>
    <head>
       <!-- basic -->
       <meta charset="utf-8">
@@ -58,27 +77,27 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand" href="index.jsp"><img src="images/pixlogo.png"></a>
+               <a class="navbar-brand" href="index.do"><img src="images/pixlogo.png"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
                
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <div class="collapse navbar-collapse" id="navbarSupportedContent"><!-- 모바일 모드에서 토글버튼안에 들어있는 메뉴-->
                   <ul class="navbar-nav ml-auto">
                      <li class="nav-item active">
-                        <a class="nav-link" href="index.jsp">Home</a>
+                        <a class="nav-link" href="./index.do">Home</a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link" href="about.do">About</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="FreeBoard.do">자유게시판</a>
+                        <a class="nav-link" href="./FreeBoard.do">자유게시판</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="QABoard.do">Q&A</a>
+                        <a class="nav-link" href="./QABoard.do">Q&A</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="blog.do">자료실</a>
+                        <a class="nav-link" href="./History.do">자료실</a>
                      </li>                     
                   </ul>
                                  
@@ -87,24 +106,35 @@
             <div class="custom_bg">
                <div class="custom_menu">
                   <ul>
-                     <li class="active"><a href="index.jsp">Home</a></li>
-                     <li><a href="about.do">About</a></li>
-                     <li><a href="treatment.do">자유게시판</a></li>
-                     <li><a href="doctors.do">Q&A</a></li>
-                     <li><a href="blog.do">자료실</a></li>
-                     <li><a href="contact.do"> Us</a></li>
+                     
+                     <li><a href="./about.do">About</a></li>
+                     <li><a href="./FreeBoard.do">자유게시판</a></li>
+                     <li><a href="./QABoard.do">Q&A</a></li>
+                     <li><a href="./History.do">자료실</a></li>
+                     
                   </ul>
                </div>
-               
                <form class="form-inline my-2 my-lg-0">
+               <%
+				// session영역에 저장된 속성이 없다면
+				//'logout' 상태,, 로그인 form을 웹브라우저에 출력해야 함
+				if (session.getAttribute("Id") != null) {%> <!--  로그인상태면 -->
+					<%=session.getAttribute("AKA")%> 
+					님 안녕하세요.&nbsp;
+					<a href="./signEdit.do"> 내 정보 수정하기</a> 
+					<a href="Logout.jsp"><i class="fa fa-user" aria-hidden="true"></i>
+                     <span class="signup_text">Logout</span></a>
+                     <% }else{ %>                   	
+                     <a href="./Login.do"><i class="fa fa-user" aria-hidden="true"></i>
+                     <span class="signup_text">Login</span></a>
+                     <a href="./signup.do"><i class="fa fa-user" aria-hidden="true"></i>
+                     <span class="signup_text">Sign Up</span></a>   
+                   <% }%>
                   <div class="search_btn">
-                     <li><a href="Login.jsp"><i class="fa fa-user" aria-hidden="true"></i>
-                     <span class="signup_text">Login</span></a></li>
-                     <li><a href="signup.jsp"><i class="fa fa-user" aria-hidden="true"></i>
-                     <span class="signup_text">Sign Up</span></a></li>
-                     <li><a href="#"><i class="fa fa-search" aria-hidden="true"></i></a></li>
-                  </div>
-               </form>
+                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                     <button class="btn btn-sm btn-outline-secondary" type="submit">Search</button>
+                      </div>   
+                       </form>
             </div>
          </div>
       </div>
@@ -118,9 +148,11 @@
                <p align="center"></p>
                   <!-- div class="col-md-6"-->
                      <h1 class="contact_taital">회원가입<br/>
-                     <strong style="text-indent: 30px;"> 본 게임은 </strong><img src="data:image/png;base64,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" 
+                     <strong style="text-indent: 30px;"> 본 게임은 
+                     </strong><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJcAAACvCAMAAADHaLyLAAAAzFBMVEUhHh74uEX///
+                     +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" 
                      width=50px heigh=10px></h1>
-                     <form action="signupCheck.do" method="post">
+                     <form action="./signup.do" method="post">
                         <!-- div class="signup_context"-->
                         	*이름 <br/>
                            <p><input type="text" class="text" placeholder="이름" name="Name"><br/></p>
@@ -133,24 +165,26 @@
                             닉네임 <br/>
                            <p><input type="text" class="text" placeholder="NickName" name="AKA"><br/></p>
                            *주민번호<br/>
-                           <input type="text" class="text" placeholder="앞자리" name="jumin1">-
-                           <input type="text" class="text" placeholder="뒷자리" name="jumin2"><br/>
+                           <input type="text" class="text" placeholder="앞자리" name="jumin1" maxlength="6">-
+                           <input type="text" class="text" placeholder="뒷자리" name="jumin2" maxlength="7" class="fa fa-eye fa-lg"><div class="eyes"><br/>
+                           <div class="form-group"><div class="input-group mb-4 password"></div></div></div>
                            *전화번호(-없이)
-                           <p><input type="text" class="text" placeholder="전화번호" name="Phone_Number"><br/></p>
+                           <p><input type="text" class="text" placeholder="전화번호" name="Phone_Number" maxlength="11"><br/></p>
                            이메일<br/>
                            <p><input type="text" class="text" placeholder="이메일" name="Email"><br/></p>
                            *주소<br/>
                            <p><input type="text" class="text" placeholder="주소" name="Address"> </p>
                            &nbsp;
                         
-                           <input type="button"  value="가입하기" class="send_bt"><a href="signup.do"></a>
-                           <!-- onclick="location.href='/index.do';"-->           
+                           <button onclick="location.href='signup.do'" class="btn btn-dark"> 가입하기</button>
+                           
+          
+                     		</form>
                            </div><!-- 조건문추가-->
-                       	
+                       	</div>
                         </div>
-                     </form>
                   </div>
-                  <script language="javascript" >
+                  <!-- cript language="javascript" >
                   function signUpCheck() {
 					var idcheck= document.getElementById("Id");
 					var passcheck= document.getElementById("pass");
@@ -163,10 +197,10 @@
 					var jumin1check= document.getElementById("jumin1");
 					var jumin2check= document.getElementById("jumin2");
 					var jumins3 = jumins1.value + jumins2.value;//1과 2를 합친곳
-				}
                   	alert("")
-                  </script>
-                  <
+				}
+                  </script-->
+                  
                    <!-- 구글맵?-->
                   <div class="col-md-6 padding_left_15">
                      <div class="map_main">
@@ -222,23 +256,20 @@
                      <div class="footer_menu">
                         <ul>
                            <li>
-                              <a href="index.do">Home</a>
+                              <a href="../index.do">Home</a>
                            </li>
                            <li>
-                              <a href="about.do">About</a>
+                              <a href="../about.do">About</a>
                            </li>
                            <li>
-                              <a href="doctors.do">Doctors</a>
+                              <a href="../FreeBoard.do">자유게시판</a>
                            </li>
                            <li>
-                              <a href="news.do">News</a>
+                              <a href="../QABoard.do">Q&A</a>
                            </li>
                            <li>
-                              <a href="treatment.do">Treatment</a>
-                           </li>
-                           <li class="active">
-                              <a href="contact.do">Contact Us</a>
-                           </li>
+                              <a href="../History.do">자료실</a>
+                           </li>                          
                         </ul>
                      </div>
                   </div>

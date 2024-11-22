@@ -38,6 +38,7 @@
    </head>
    
    <body>
+   
       <!-- header top section start -->
       <div class="header_top_section">
          <div class="container">
@@ -57,12 +58,12 @@
       <div class="header_section">
          <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-               <a class="navbar-brand"href="index.do"><img src="images/pixlogo.png"></a>
+               <a class="navbar-brand"href="./index.do"><img src="images/pixlogo.png"></a>
                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" 
                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                <span class="navbar-toggler-icon"></span>
                </button>
-               <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <div class="collapse navbar-collapse" id="navbarSupportedContent"><!-- 토글메뉴-->
                   <ul class="navbar-nav ml-auto">
                      <li class="nav-item active">
                         <a class="nav-link" href="index.do">Home</a>
@@ -71,13 +72,13 @@
                         <a class="nav-link" href="#">About</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="FreeBoard.do">자유게시판</a>
+                        <a class="nav-link" href="./FreeBoard.do">자유게시판</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="QABoard.do">Q&A</a>
+                        <a class="nav-link" href="./QABoard.do">Q&A</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link" href="History.do">자료실</a>
+                        <a class="nav-link" href="./History.do">자료실</a>
                      </li>                 
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
@@ -87,29 +88,36 @@
             <div class="custom_bg">
                <div class="custom_menu">
                   <ul>
-                     <li class="active"><a href="index.do">Home</a></li>
-                     <li><a href="about.do">About</a></li>
-                     <li><a href="FreeBoard.do">자유게시판</a></li>
-                     <li><a href="QABoard.do">Q&A</a></li>
-                     <li><a href="History.do">자료실</a></li>
+                     
+                     <li><a href="./about.do">About</a></li>
+                     <li><a href="./FreeBoard.do">자유게시판</a></li>
+                     <li><a href="./QABoard.do">Q&A</a></li>
+                     <li><a href="./History.do">자료실</a></li>
                   </ul>
                </div>
+	
                <!--  로그인, 회원가입 홈페이지 내 버튼 , 로그인시엔 로그아웃버튼으로 변경-->
                <form class="form-inline my-2 my-lg-0">
+               <%
+				// session영역에 저장된 속성이 없다면
+				//'logout' 상태,, 로그인 form을 웹브라우저에 출력해야 함
+				if (session.getAttribute("Id") != null) {%> <!--  로그인상태면 -->
+					<%=session.getAttribute("AKA")%> 
+					님 안녕하세요.&nbsp;
+					<a href="./signEdit.do"> 내 정보 수정하기</a> 
+					<a href="Logout.jsp"><i class="fa fa-user" aria-hidden="true"></i>
+                     <span class="signup_text">Logout</span></a>
+                     <% }else{ %>                   	
+                     <a href="./Login.do"><i class="fa fa-user" aria-hidden="true"></i>
+                     <span class="signup_text">Login</span></a>
+                     <a href="./signup.do"><i class="fa fa-user" aria-hidden="true"></i>
+                     <span class="signup_text">Sign Up</span></a>   
+                   <% }%>
                   <div class="search_btn">
-                     <li><a onclick="window.location.href='Login.do';"><i class="fa fa-user" aria-hidden="true"></i>
-                     <span class="signup_text">Login</span></a></li>
-                     <li><a onclick="window.location.href='signup.do';"><i class="fa fa-user" aria-hidden="true"></i>
-                     <span class="signup_text">Sign Up</span></a></li>   
-                     <c:if ></c:if> 
-                     <li><a href="Logout.jsp"></a></li>
-                     <span class="signup_text">Logout</span></a></li>
-                     
                      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                      <button class="btn btn-sm btn-outline-secondary" type="submit">Search</button>
                       </div>   
                        </form>
-                       
             </div>
          </div>
          <!-- header section end -->
@@ -118,7 +126,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-12">
-                   <!-- 홈페이지입장문구-->  <h1 class="banner_taital">xx 게임사입니다.</h1>
+                   <!-- 홈페이지입장문구-->  <h1 class="banner_taital">xxGames here</h1>
                      <p class="banner_text"> The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters </p>
                      <div class="read_bt" onclick= ><a href="#">Read More</a></div>
                   </div>
@@ -128,96 +136,7 @@
          <!-- banner section end -->
       </div>
       
-      
-      <!-- appointment section start -->
-      <div class="appointment_section">
-         <div class="container">
-            <div class="appointment_box">
-               <div class="row">
-                  <div class="col-md-12">
-                     <h1 class="appointment_taital">Book <span style="color: #0cb7d6;">Appointment</span></h1>
-                  </div>
-               </div>
-               <div class="appointment_section_2">
-                  <div class="row">
-                     <div class="col-md-4">
-                        <p class="doctorname_text">Patient Name</p>
-                        <input type="text" class="email_text" placeholder="" name="">
-                     </div>
-                     <div class="col-md-4">
-                        <form>
-                           <div class="form-group">
-                              <p class="doctorname_text">Doctor's Name</p>
-                              <select class="form-control" id="">
-                                 <option>Normal distribution </option>
-                                 <option>200</option>
-                                 <option>300</option>
-                                 <option>400</option>
-                                 <option>500</option>
-                              </select>
-                           </div>
-                        </form>
-                     </div>
-                     <div class="col-md-4">
-                        <form>
-                           <div class="form-group">
-                              <p class="doctorname_text">Department's Name</p>
-                              <select class="form-control" id="">
-                                 <option>Normal distribution </option>
-                                 <option>2</option>
-                                 <option>3</option>
-                                 <option>4</option>
-                                 <option>5</option>
-                              </select>
-                           </div>
-                        </form>
-                     </div>
-                  </div>
-                  <div class="row">
-                     <div class="col-md-4">
-                        <p class="doctorname_text">Phone Number</p>
-                        <input type="text" class="email_text" placeholder="" name="">
-                     </div>
-                     <div class="col-md-4">
-                        <form>
-                           <div class="form-group">
-                              <p class="doctorname_text">Department</p>
-                              <select class="form-control" id="">
-                                 <option>Normal distribution</option>
-                                 <option>2</option>
-                                 <option>3</option>
-                                 <option>4</option>
-                                 <option>5</option>
-                              </select>
-                           </div>
-                        </form>
-                     </div>
-                     <div class="col-md-4">
-                        <p class="doctorname_text">Choose Date</p>
-                        <input id="datepicker" placeholder="Select Date" width="270" />
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- appointment section end -->
-      <!-- about section start -->
-      <div class="about_section layout_padding">
-         <div class="container">
-            <div class="row">
-               <div class="col-md-6">
-                  <h1 class="about_taital">About Hospital</h1>
-                  <p class="about_text"> has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors  has a more-or-less normal distribution of letters, as o</p>
-                  <div class="about_bt"><a href="#">Read More</a></div>
-               </div>
-               <div class="col-md-6">
-                  <div class="about_img"><img src="images/about-img.png"></div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- about section end -->
+                  <h1 class="about_taital">About Hospital</h1>       
 
       <!-- doctores section start -->
       <div class="doctores_section">
@@ -227,16 +146,12 @@
                   <h1 class="doctores_taital">Our doctores</h1>
                </div>
             </div>
-            <div class="doctores_section_2">
+            
                <div id="my_slider" class="carousel slide" data-ride="carousel">
-                  <div class="carousel-inner">
+                  
                      <div class="carousel-item active">
                         <div class="row">
-                           <div class="col-md-4">
-                              <div class="doctores_box">
-                                 <div class="image_1"><img src="images/img-1.png"></div>
-                                 <h4 class="humour_text">Humour <br><span class="mbbs_text">MBBS</span></h4>
-                                 <div class="social_icon">
+
                                     <ul>
                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
@@ -248,9 +163,9 @@
                            </div>
                            <div class="col-md-4"> </div>
                            <div class="col-md-4">    </div>
-                           </div>
+                         
                         </div>
-                     </div>
+                    
                      <div class="carousel-item">
                         <div class="row">
                            <div class="col-md-4">  </div>
@@ -290,51 +205,7 @@
                   <h1 class="testimonial_taital">Our Testimonial</h1>
                </div>
             </div>
-            <div class="customer_section_2">
-               <div class="row">
-                  <div class="col-md-12">
-                      <div class="box_main">
-                        <div id="main_slider" class="carousel slide" data-ride="carousel">
-                           <div class="carousel-inner">
-                              <div class="carousel-item active">
-                                 <div class="customer_main">
-                                    <div class="customer_right">
-                                       <h3 class="customer_name">Morijorch <span class="quick_icon"><img src="images/quick-icon.png"></span></h3>
-                                       <p class="default_text">Default model text,</p>
-                                       <p class="enim_text">editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="carousel-item">
-                                 <div class="customer_main">
-                                    <div class="customer_right">
-                                       <h3 class="customer_name">Morijorch <span class="quick_icon"><img src="images/quick-icon.png"></span></h3>
-                                       <p class="default_text">Default model text,</p>
-                                       <p class="enim_text">editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various</p>
-                                    </div>
-                                 </div>
-                              </div>
-                              <div class="carousel-item">
-                                 <div class="customer_main">
-                                    <div class="customer_right">
-                                       <h3 class="customer_name">Morijorch <span class="quick_icon"><img src="images/quick-icon.png"></span></h3>
-                                       <p class="default_text">Default model text,</p>
-                                       <p class="enim_text">editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Variouseditors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various</p>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <a class="carousel-control-prev" href="#main_slider" role="button" data-slide="prev">
-                           <i class="fa fa-angle-left"></i>
-                           </a>
-                           <a class="carousel-control-next" href="#main_slider" role="button" data-slide="next">
-                           <i class="fa fa-angle-right"></i>
-                           </a>
-                        </div>
-                     </div>
-                  </div>
-                </div>
-            </div>
+            
          </div>
       </div>
       <!-- testimonial section end -->
@@ -399,22 +270,19 @@
                      <div class="footer_menu">
                         <ul>
                            <li class="active">
-                              <a href="index.do">Home</a>
+                              <a href="./index.do">Home</a>
                            </li>
                            <li>
                               <a href="#">About</a>
                            </li>
                            <li>
-                              <a href="QABoard.do">Q&A</a>
+                              <a href="./QABoard.do">Q&A</a>
                            </li>
                            <li>
-                              <a href="news.do">News</a>
-                           </li>
+                              <a href="./FreeBoard.do">FreeBoard</a>
+                           </li>                         
                            <li>
-                              <a href="FreeBoard.do">FreeBoard</a>
-                           </li>
-                           <li>
-                              <a href="contact.do">Contact Us</a>
+                              <a href="./History.do">자료실</a>
                            </li>
                         </ul>
                      </div>
